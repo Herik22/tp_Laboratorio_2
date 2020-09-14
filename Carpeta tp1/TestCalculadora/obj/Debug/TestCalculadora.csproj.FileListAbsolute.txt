@@ -1,0 +1,10 @@
+C:\Users\H420\Source\Repos\Entidades\TestCalculadora\bin\Debug\TestCalculadora.exe.config
+C:\Users\H420\Source\Repos\Entidades\TestCalculadora\bin\Debug\TestCalculadora.exe
+C:\Users\H420\Source\Repos\Entidades\TestCalculadora\bin\Debug\TestCalculadora.pdb
+C:\Users\H420\Source\Repos\Entidades\TestCalculadora\bin\Debug\Entidadess.dll
+C:\Users\H420\Source\Repos\Entidades\TestCalculadora\bin\Debug\Entidadess.pdb
+C:\Users\H420\Source\Repos\Entidades\TestCalculadora\obj\Debug\TestCalculadora.csprojAssemblyReference.cache
+C:\Users\H420\Source\Repos\Entidades\TestCalculadora\obj\Debug\TestCalculadora.csproj.CoreCompileInputs.cache
+C:\Users\H420\Source\Repos\Entidades\TestCalculadora\obj\Debug\TestCalculadora.csproj.CopyComplete
+C:\Users\H420\Source\Repos\Entidades\TestCalculadora\obj\Debug\TestCalculadora.exe
+C:\Users\H420\Source\Repos\Entidades\TestCalculadora\obj\Debug\TestCalculadora.pdb

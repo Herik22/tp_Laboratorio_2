@@ -1,0 +1,6 @@
+C:\Users\H420\Source\Repos\Entidades\Entidadess\bin\Debug\Entidadess.dll
+C:\Users\H420\Source\Repos\Entidades\Entidadess\bin\Debug\Entidadess.pdb
+C:\Users\H420\Source\Repos\Entidades\Entidadess\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\H420\Source\Repos\Entidades\Entidadess\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\H420\Source\Repos\Entidades\Entidadess\obj\Debug\Entidadess.dll
+C:\Users\H420\Source\Repos\Entidades\Entidadess\obj\Debug\Entidadess.pdb

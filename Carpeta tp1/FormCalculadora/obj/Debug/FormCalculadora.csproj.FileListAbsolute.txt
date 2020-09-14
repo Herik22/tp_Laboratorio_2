@@ -1,0 +1,13 @@
+C:\Users\H420\Source\Repos\Entidades\FormCalculadora\bin\Debug\FormCalculadora.exe.config
+C:\Users\H420\Source\Repos\Entidades\FormCalculadora\bin\Debug\FormCalculadora.exe
+C:\Users\H420\Source\Repos\Entidades\FormCalculadora\bin\Debug\FormCalculadora.pdb
+C:\Users\H420\Source\Repos\Entidades\FormCalculadora\obj\Debug\FormCalculadora.csprojAssemblyReference.cache
+C:\Users\H420\Source\Repos\Entidades\FormCalculadora\obj\Debug\FormCalculadora.Properties.Resources.resources
+C:\Users\H420\Source\Repos\Entidades\FormCalculadora\obj\Debug\FormCalculadora.csproj.GenerateResource.cache
+C:\Users\H420\Source\Repos\Entidades\FormCalculadora\obj\Debug\FormCalculadora.csproj.CoreCompileInputs.cache
+C:\Users\H420\Source\Repos\Entidades\FormCalculadora\obj\Debug\FormCalculadora.exe
+C:\Users\H420\Source\Repos\Entidades\FormCalculadora\obj\Debug\FormCalculadora.pdb
+C:\Users\H420\Source\Repos\Entidades\FormCalculadora\obj\Debug\FormCalculadora.FormCalculadora.resources
+C:\Users\H420\Source\Repos\Entidades\FormCalculadora\bin\Debug\Entidadess.dll
+C:\Users\H420\Source\Repos\Entidades\FormCalculadora\bin\Debug\Entidadess.pdb
+C:\Users\H420\Source\Repos\Entidades\FormCalculadora\obj\Debug\FormCalculadora.csproj.CopyComplete
