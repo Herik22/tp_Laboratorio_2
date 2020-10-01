@@ -11,7 +11,7 @@ namespace Entidades
 
         #region PROPIEDADES
         /// <summary>
-        /// Las motos son chicas
+        /// Retornara el tamaño del Ciclomotor, Las motos son chicas
         /// </summary>
         protected override ETamanio Tamanio
         {
@@ -23,12 +23,22 @@ namespace Entidades
         #endregion
 
         #region CONSTRUCTORES
+        /// <summary>
+        /// Constructor parametrizado de la clase Ciclomotor, que a su vez llama al cosntructor base. 
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
         public Ciclomotor (EMarca marca, string chasis, ConsoleColor color): base (chasis,marca,color)
         {
         }
         #endregion
 
         #region METODOS
+        /// <summary>
+        /// Retornara un string con la informacion del vehiculo CICLOMOTOR
+        /// </summary>
+        /// <returns></returns>
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();

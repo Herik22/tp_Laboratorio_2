@@ -12,19 +12,25 @@ namespace Entidades
       
         #region PROPIEDADES
         /// <summary>
-        /// Las camionetas son grandes
+        ///  Retornara el tamaño, Las camionetas son grandes
         /// </summary>
         protected override ETamanio Tamanio
         {
             get
             {
-                return Vehiculo.ETamanio.Grande;
+                return Vehiculo.ETamanio.Grande; // en el ejecutable aparece MEDIANO. 
             }
         }
 
         #endregion
 
         #region CONSTRUCTORES
+        /// <summary>
+        /// Consturctor parametrizado de la clase derivada SUV 
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
         public Suv(EMarca marca, string chasis, ConsoleColor color)
             : base(chasis, marca, color)
         {
@@ -33,7 +39,7 @@ namespace Entidades
 
         #region METODOS
         /// <summary>
-        /// Muestra la informacion del vehiculo
+        /// Muestra la informacion del vehiculo  SUV
         /// </summary>
         /// <returns></returns>
         public override  string Mostrar() 

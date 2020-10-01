@@ -31,6 +31,12 @@ namespace Entidades
 
         #region CONSTRUCTORES
 
+        /// <summary>
+        /// Constructor parametrizado de la clase Vehiculo.
+        /// </summary>
+        /// <param name="chasis"></param>
+        /// <param name="marca"></param>
+        /// <param name="color"></param>
         public Vehiculo(string chasis, EMarca marca, ConsoleColor color)
         {
             this.chasis = chasis;
@@ -62,10 +68,13 @@ namespace Entidades
         #endregion
 
         #region SOBRECARGAS
+
+        /// <summary>
+        /// Retornara un string con la informacion del vehiuclo 
+        /// </summary>
+        /// <param name="p"></param>
         public static explicit operator string(Vehiculo p)
         {
-            /* */
-
             return p.Mostrar(); //sb.ToString();
         }
 
@@ -100,7 +109,7 @@ namespace Entidades
 
        public  enum ETamanio
         {
-            Chico, Mediano, Grande
+            Chico, Mediano, Grande // falta 
         }
 
         #endregion

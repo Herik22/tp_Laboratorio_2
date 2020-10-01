@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,38 +10,33 @@ namespace Entidades
     /// <summary>
     /// No podrá tener clases heredadas.
     /// </summary>
-    public  sealed class Taller 
+    public sealed class Taller
     {
-        private List<Vehiculo> vehiculos;
-        private int espacioDisponible;
-        public enum ETipo
-        {
-            Ciclomotor, Sedan, SUV, Todos
-        }
+        #region ATRIBUTOS
 
-        #region "Constructores"
+        private int espacioDisponible;
+        private List<Vehiculo> vehiculos;       
+        #endregion
+
+        #region CONSTRUCTORES
+        /// <summary>
+        /// Construtor por defecto, inicializa la lista
+        /// </summary>
         private Taller()
         {
             this.vehiculos = new List<Vehiculo>();
         }
-        public Taller(int espacioDisponible): this ()
+        /// <summary>
+        /// constructor parametrizado que a su vez llama al constructor por defecto. 
+        /// </summary>
+        /// <param name="espacioDisponible"></param>
+        public Taller(int espacioDisponible) : this()
         {
             this.espacioDisponible = espacioDisponible;
         }
         #endregion
 
-        #region "Sobrecargas"
-        /// <summary>
-        /// Muestro el estacionamiento y TODOS los vehículos
-        /// </summary>
-        /// <returns></returns>
-        public string ToString()
-        {
-            return Taller.Listar(this, ETipo.Todos);
-        }
-        #endregion
-
-        #region "Métodos"
+        #region METODOS
 
         /// <summary>
         /// Expone los datos del elemento y su lista (incluidas sus herencias)
@@ -53,67 +49,105 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles", taller.vehiculos.Count, taller.espacioDisponible);
-            sb.AppendLine("");
+            sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles\n", taller.vehiculos.Count, taller.espacioDisponible);
             foreach (Vehiculo v in taller.vehiculos)
             {
                 switch (tipo)
                 {
-                    case ETipo.Camioneta:
-                        sb.AppendLine(v.Mostrar());
+                    case ETipo.SUV:
+
+                        if(v is Suv)
+                        { 
+                            sb.AppendLine((string)v);
+                        }                       
                         break;
-                    case ETipo.Moto:
-                        sb.AppendLine(v.Mostrar());
+                    case ETipo.Ciclomotor:
+                        if( v is Ciclomotor)
+                        {
+                            sb.AppendLine((string)v);
+                        }
                         break;
-                    case ETipo.Automovil:
-                        sb.AppendLine(v.Mostrar());
+                    case ETipo.Sedan:
+                        if(v is Sedan)
+                        {
+                            sb.AppendLine((string)v);
+                        }                      
                         break;
-                    default:
-                        sb.AppendLine(v.Mostrar());
+                    case ETipo.Todos:
+                        sb.AppendLine((string)v);
                         break;
                 }
             }
 
-            return sb;
+            return sb.ToString();
         }
         #endregion
 
-        #region "Operadores"
+        #region SOBRECARGA DE METODOS
         /// <summary>
-        /// Agregará un elemento a la lista
+        /// Muestro el estacionamiento y TODOS los vehículos
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return this.Listar(this, ETipo.Todos);
+        }
+        #endregion
+
+        #region SOBRECARGA DE OPERADORES
+        /// <summary>
+        /// Agregará un elemento a la lista siempre y cuando haya espacio disponible y el elemento no se encuentre en la lista. 
         /// </summary>
         /// <param name="taller">Objeto donde se agregará el elemento</param>
         /// <param name="vehiculo">Objeto a agregar</param>
         /// <returns></returns>
         public static Taller operator +(Taller taller, Vehiculo vehiculo)
         {
-            foreach (Vehiculo v in taller)
+            foreach (Vehiculo v in taller.vehiculos)
             {
                 if (v == vehiculo)
+                {
                     return taller;
+                }                                 
             }
-
-            taller.vehiculos.Add(vehiculo);
+            if( taller.vehiculos.Count < taller.espacioDisponible )
+            {
+                taller.vehiculos.Add(vehiculo);
+            }
+            
             return taller;
         }
         /// <summary>
-        /// Quitará un elemento de la lista
+        /// Quitará un elemento de la lista siempre  y cuando este se encuentre dentro de la lista 
         /// </summary>
         /// <param name="taller">Objeto donde se quitará el elemento</param>
         /// <param name="vehiculo">Objeto a quitar</param>
         /// <returns></returns>
         public static Taller operator -(Taller taller, Vehiculo vehiculo)
         {
-            foreach (Vehiculo v in taller)
+            foreach (Vehiculo v in taller.vehiculos)
             {
                 if (v == vehiculo)
                 {
+                    taller.vehiculos.Remove(vehiculo);
                     break;
                 }
             }
 
             return taller;
         }
+        #endregion
+
+        #region ENUMERADOS
+
+        public enum ETipo
+        {
+            Ciclomotor,
+            Sedan,
+            SUV,
+            Todos
+        }
+
         #endregion
     }
 }

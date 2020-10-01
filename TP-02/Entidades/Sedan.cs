@@ -19,7 +19,7 @@ namespace Entidades
 
         #region PROPIEDADES
         /// <summary>
-        /// Los automoviles son medianos
+        /// Retorna el damaño del SEDAN, Los automoviles son medianos
         /// </summary>
         protected override ETamanio Tamanio
         {
@@ -33,7 +33,7 @@ namespace Entidades
 
         #region CONSTRUCTORES
         /// <summary>
-        /// Por defecto, TIPO será Monovolumen
+        /// Constructor Por defecto,que llama tambien al constructor base,  TIPO será Monovolumen 
         /// </summary>
         /// <param name="marca"></param>
         /// <param name="chasis"></param>
@@ -41,9 +41,16 @@ namespace Entidades
         public Sedan(EMarca marca, string chasis, ConsoleColor color)
             : base(chasis, marca, color)
         {
-            
+            this.tipo = ETipo.CuatroPuertas; // NO existe MONOVOLUMEN 
         }
 
+        /// <summary>
+        /// Constructor que a su vez reutiliza al constructor por defecto
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
+        /// <param name="tipo"></param>
         public Sedan (EMarca marca, string chasis, ConsoleColor color,ETipo tipo):this (marca,chasis,color)
         {
             this.tipo = tipo;
@@ -51,14 +58,19 @@ namespace Entidades
         #endregion
 
         #region METODOS
+        /// <summary>
+        /// Retornara la informacion del vehiculo  SEDAN
+        /// </summary>
+        /// <returns></returns>
         public override sealed string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("SEDAN");
             sb.AppendLine(base.Mostrar());
-            sb.AppendFormat("TAMAÑO : {0}\n", this.Tamanio);
-            sb.AppendFormat("TIPO : \n" + this.tipo);
+            sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
+            sb.AppendFormat("TIPO : " + this.tipo);
+            sb.AppendLine();
             sb.AppendLine("---------------------");
 
             return sb.ToString();
