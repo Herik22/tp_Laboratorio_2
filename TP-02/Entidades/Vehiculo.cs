@@ -55,14 +55,7 @@ namespace Entidades
         /// <returns></returns>
         public virtual string Mostrar()
         {
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendFormat("CHASIS: {0}\r\n", this.chasis);
-            sb.AppendFormat("MARCA : {0}\r\n", this.marca.ToString());
-            sb.AppendFormat("COLOR : {0}\r\n", this.color.ToString());
-            sb.AppendLine("---------------------");
-
-            return sb.ToString();
+            return (string)this;
         }
 
         #endregion
@@ -75,7 +68,14 @@ namespace Entidades
         /// <param name="p"></param>
         public static explicit operator string(Vehiculo p)
         {
-            return p.Mostrar(); //sb.ToString();
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendFormat("CHASIS: {0}\r\n", p.chasis);
+            sb.AppendFormat("MARCA : {0}\r\n", p.marca.ToString());
+            sb.AppendFormat("COLOR : {0}\r\n", p.color.ToString());
+            sb.AppendLine("---------------------");
+
+            return sb.ToString();  //return p.Mostrar(); //sb.ToString();
         }
 
         /// <summary>
