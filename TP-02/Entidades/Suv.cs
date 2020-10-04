@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    
+    /// <summary>
+    /// La clase Suv deriva de la clase Vehiculo. y es publica
+    /// </summary>
     public class Suv : Vehiculo
     {
       

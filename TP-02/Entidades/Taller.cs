@@ -58,23 +58,23 @@ namespace Entidades
 
                         if(v is Suv)
                         { 
-                            sb.AppendLine((string)v);
+                            sb.AppendLine(v.Mostrar());
                         }                       
                         break;
                     case ETipo.Ciclomotor:
                         if( v is Ciclomotor)
                         {
-                            sb.AppendLine((string)v);
+                            sb.AppendLine(v.Mostrar());
                         }
                         break;
                     case ETipo.Sedan:
                         if(v is Sedan)
                         {
-                            sb.AppendLine((string)v);
+                            sb.AppendLine(v.Mostrar());
                         }                      
                         break;
                     case ETipo.Todos:
-                        sb.AppendLine((string)v);
+                        sb.AppendLine(v.Mostrar());
                         break;
                 }
             }

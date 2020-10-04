@@ -8,7 +8,10 @@ using System.Drawing;
 
 namespace Entidades
 {
-     public class Sedan : Vehiculo
+    /// <summary>
+    /// La clase Sedan deriva de la clase Vehiculo. y es publica
+    /// </summary>
+    public class Sedan : Vehiculo
     {
 
         #region ATRIBUTOS

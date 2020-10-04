@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// La clase Ciclomotor  deriva de la clase Vehiculo. y es publica
+    /// </summary>
     public class Ciclomotor : Vehiculo
     {
 
