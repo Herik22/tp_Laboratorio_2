@@ -35,17 +35,6 @@ namespace Entidades
         #endregion
 
         #region CONSTRUCTORES
-        /// <summary>
-        /// Constructor Por defecto,que llama tambien al constructor base,  TIPO será Monovolumen 
-        /// </summary>
-        /// <param name="marca"></param>
-        /// <param name="chasis"></param>
-        /// <param name="color"></param>
-        public Sedan(EMarca marca, string chasis, ConsoleColor color)
-            : base(chasis, marca, color)
-        {
-            this.tipo = ETipo.CuatroPuertas; // NO existe MONOVOLUMEN 
-        }
 
         /// <summary>
         /// Constructor que a su vez reutiliza al constructor por defecto
@@ -54,10 +43,24 @@ namespace Entidades
         /// <param name="chasis"></param>
         /// <param name="color"></param>
         /// <param name="tipo"></param>
-        public Sedan (EMarca marca, string chasis, ConsoleColor color,ETipo tipo):this (marca,chasis,color)
+        public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo) : base(chasis,marca,color)
         {
             this.tipo = tipo;
         }
+
+        /// <summary>
+        /// Constructor Por defecto,que llama tambien al constructor base,  TIPO será Monovolumen 
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
+        public Sedan(EMarca marca, string chasis, ConsoleColor color)
+            : this(marca,chasis,color,ETipo.CuatroPuertas)
+        {
+           
+        }
+
+        
         #endregion
 
         #region METODOS
