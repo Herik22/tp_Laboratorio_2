@@ -1,0 +1,6 @@
+C:\Users\H420\Desktop\Arismendy.Herik.2A.TP3\Arismendy.Herik.2A.TP3\bin\Debug\Arismendy.Herik.2A.TP3.dll
+C:\Users\H420\Desktop\Arismendy.Herik.2A.TP3\Arismendy.Herik.2A.TP3\bin\Debug\Arismendy.Herik.2A.TP3.pdb
+C:\Users\H420\Desktop\Arismendy.Herik.2A.TP3\Arismendy.Herik.2A.TP3\obj\Debug\Arismendy.Herik.2A.TP3.csprojAssemblyReference.cache
+C:\Users\H420\Desktop\Arismendy.Herik.2A.TP3\Arismendy.Herik.2A.TP3\obj\Debug\Arismendy.Herik.2A.TP3.csproj.CoreCompileInputs.cache
+C:\Users\H420\Desktop\Arismendy.Herik.2A.TP3\Arismendy.Herik.2A.TP3\obj\Debug\Arismendy.Herik.2A.TP3.dll
+C:\Users\H420\Desktop\Arismendy.Herik.2A.TP3\Arismendy.Herik.2A.TP3\obj\Debug\Arismendy.Herik.2A.TP3.pdb
