@@ -4,3 +4,9 @@ C:\Users\H420\Desktop\Arismendy.Herik.2A.TP3\Clases Abstractas\obj\Debug\Clases 
 C:\Users\H420\Desktop\Arismendy.Herik.2A.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.csproj.CoreCompileInputs.cache
 C:\Users\H420\Desktop\Arismendy.Herik.2A.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.dll
 C:\Users\H420\Desktop\Arismendy.Herik.2A.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.pdb
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Abstractas\bin\Debug\Clases Abstractas.dll
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Abstractas\bin\Debug\Clases Abstractas.pdb
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.csprojAssemblyReference.cache
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.csproj.CoreCompileInputs.cache
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.dll
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.pdb

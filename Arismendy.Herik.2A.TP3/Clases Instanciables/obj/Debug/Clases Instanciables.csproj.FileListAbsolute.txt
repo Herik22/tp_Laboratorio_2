@@ -7,3 +7,12 @@ C:\Users\H420\Desktop\Arismendy.Herik.2A.TP3\Clases Instanciables\obj\Debug\Clas
 C:\Users\H420\Desktop\Arismendy.Herik.2A.TP3\Clases Instanciables\obj\Debug\Clases Instanciables.csproj.CopyComplete
 C:\Users\H420\Desktop\Arismendy.Herik.2A.TP3\Clases Instanciables\obj\Debug\Clases Instanciables.dll
 C:\Users\H420\Desktop\Arismendy.Herik.2A.TP3\Clases Instanciables\obj\Debug\Clases Instanciables.pdb
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\bin\Debug\Clases Instanciables.dll
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\bin\Debug\Clases Instanciables.pdb
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\bin\Debug\Clases Abstractas.dll
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\bin\Debug\Clases Abstractas.pdb
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\obj\Debug\Clases Instanciables.csprojAssemblyReference.cache
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\obj\Debug\Clases Instanciables.csproj.CoreCompileInputs.cache
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\obj\Debug\Clases Instanciables.csproj.CopyComplete
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\obj\Debug\Clases Instanciables.dll
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\obj\Debug\Clases Instanciables.pdb

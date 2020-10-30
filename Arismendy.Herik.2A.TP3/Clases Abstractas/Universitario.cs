@@ -51,9 +51,10 @@ namespace Clases_Abstractas
         protected virtual string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine();
             sb.AppendLine(base.ToString());
+            sb.AppendLine();
             sb.AppendFormat("LEGAJO: {0}", this.legajo);
+            sb.AppendLine();
 
             return sb.ToString();
         }

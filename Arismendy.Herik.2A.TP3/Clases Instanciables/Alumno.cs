@@ -7,7 +7,7 @@ using Clases_Abstractas;
 
 namespace Clases_Instanciables
 {
-    sealed class Alumno : Universitario
+    public sealed class Alumno : Universitario
     {
         #region Atributos
 
@@ -96,11 +96,7 @@ namespace Clases_Instanciables
         /// <returns></returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine();
-            sb.AppendLine(this.MostrarDatos());
-
-            return sb.ToString();
+            return this.MostrarDatos();
         }
 
 

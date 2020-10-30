@@ -103,7 +103,7 @@ namespace Clases_Abstractas
 
         #endregion
 
-        #region METODOS 
+        #region METODOS // APLICAR VALIDACIONES!!!!!!!!!!!!!!
 
         /// <summary>
         /// Retorna la informacion de persona. 
@@ -112,7 +112,7 @@ namespace Clases_Abstractas
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine();
+            //sb.AppendLine();
             sb.AppendFormat("NOMBRE COMPLETO: {0},{1}", this.nombre, this.apellido);
             sb.AppendLine();
             sb.AppendFormat("NACIONALIDAD: {0}", this.nacionalidad);
@@ -120,7 +120,7 @@ namespace Clases_Abstractas
         }
 
         ///DESARROLLAR LAS VALIDACIONES
-        #endregion
+        #endregion  
 
         #region ENUMERADOS
 
