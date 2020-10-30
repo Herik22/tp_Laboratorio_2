@@ -130,5 +130,5 @@ namespace Arismendy.Herik._2A.TP3
             return a1.claseQueToma != clase;
         }
             #endregion
-        }
+    }
 }

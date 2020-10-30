@@ -57,7 +57,7 @@ namespace Entidades
         public Sedan(EMarca marca, string chasis, ConsoleColor color)
             : this(marca,chasis,color,ETipo.CuatroPuertas)
         {
-           
+            
         }
 
         
