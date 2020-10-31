@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -70,7 +71,7 @@ namespace Clases_Instanciables
         {
             
             
-            int auxRandom = -1;
+            int auxRandom = default;
             for (int i = 0; i < 2; i++)
             {
                 auxRandom = Profesor.random.Next(0, 3);
@@ -120,6 +121,27 @@ namespace Clases_Instanciables
         #endregion
 
         #region SOBRECARGAS
-        #endregion
-    }
+        /// <summary>
+        /// TRUE= si el  Profesor da esa clase.
+        /// FALSE= lo contrario.
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="clase"></param>
+        /// <returns></returns>
+        public static bool operator == (Profesor i, Universidad.EClases clase)
+        {
+            bool rta = false;
+            foreach (Universidad.EClases item in i.clasesDelDia)
+            {
+                rta = item == clase;
+            }
+            return rta;
+        }
+
+        public static bool operator != (Profesor i, Universidad.EClases clase)
+        {
+            return !(i == clase);
+        }
+            #endregion
+        }
 }

@@ -111,7 +111,7 @@ namespace Clases_Instanciables
         }
 
         /// <summary>
-        /// Agrega el zlumnos a la clase siempre y cuando este  no estén previamente en la clase..
+        /// Agrega el alumnos a la clase siempre y cuando este  no estén previamente en la clase..
         /// </summary>
         /// <returns></returns>
         public static Jornada operator + (Jornada j,Alumno a)

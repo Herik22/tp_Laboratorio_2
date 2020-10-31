@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,7 +49,7 @@ namespace Clases_Instanciables
 
         #endregion
 
-        #region PROPIEDADES COMPLETAR PROPIEDADES!!!!!!!!!!!!!!!!!!!!! 
+        #region PROPIEDADES COMPLETAR PROPIEDADES!!!!!!!!!!!!!!!!!!!!! INDEXEADORES
 
         /// <summary>
         /// 
@@ -68,17 +70,150 @@ namespace Clases_Instanciables
         /// </summary>
         public List<Alumno> This { get { return this.alumnos; } set { this.alumnos = value; } }
 
-        
+
 
         #endregion
 
-        #region METODOS // ARCHIVOS!!!!!!!! INDEXEADORES!!!!!!! 
+        #region METODOS // ARCHIVOS!!!!!!!! 
+
         #endregion
 
-        #region SOBRECARGAS 
+        #region SOBRECARGAS PREGUNTAR POR LAS DE UNIVERSIDAD - CLASE
+        /// <summary>
+        ///  Al agregar una clase a un Universidad se deberá generar y agregar una nueva Jornada indicando la
+        ///clase, un Profesor que pueda darla(según su atributo ClasesDelDia) y la lista de alumnos que la
+        ///toman(todos los que coincidan en su campo ClaseQueToma).
+        /// </summary>
+        /// <returns></returns>
+        public static  Universidad operator + (Universidad g, EClases clase) // revisar
+        {
+            Jornada auxJornada = new Jornada(clase, g == clase );
+            foreach (Alumno item in g.alumnos)
+            {
+                if (item == clase)
+                {
+                    auxJornada += item;
+                }
+            }
+            return g;
+        }
+
+        /// <summary>
+        /// • Se agregarán Alumnos validando que no estén previamentecargados. y si lo estan lanzo exepcion. 
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="a"></param>
+        /// <returns></returns>
+        public static Universidad operator + (Universidad u,Alumno a) //falta excepcion 
+        {
+            if ( u != a)
+            {
+                u.alumnos.Add(a);
+            }
+            return u;
+        }
+
+        /// <summary>
+        /// • Se agregarán Profesores validando que no estén previamente cargados. y si lo estan lanzo exepcion. 
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        public static Universidad operator + (Universidad u,Profesor i)
+        {
+            if (u != i)
+            {
+                u.profesores.Add(i); 
+            }//falta exepcion 
+            return u;
+        }
+
+        /// <summary>
+        /// • Un Universidad será igual a un Alumno si el mismo está inscripto en él.
+        /// </summary>
+        /// <returns></returns>
+        public static bool operator == (Universidad g, Alumno a)
+        {
+            bool rta = false;
+            foreach (Alumno item in g.alumnos)
+            {
+                rta = item.Equals(a);
+            }
+
+            return rta;
+        }
+
+        /// <summary>
+        ///  Un Universidad será igual a un Profesor si el mismo está dando clases en él.
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public static bool operator == (Universidad g,Profesor p)
+        {
+            bool rta = false;
+            foreach (Profesor item in g.profesores)
+            {
+                rta = item.Equals(p);
+            }
+
+            return rta;
+        }
+
+        /// <summary>
+        /// La igualación entre un Universidad y una Clase retornará el primer Profesor capaz de dar esa clase.
+        /// Sino, lanzará la Excepción SinProfesorException.
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="clase"></param>
+        /// <returns></returns>
+        public static Profesor operator == (Universidad u, EClases clase) //FALTA EL BLOQUE TRY catch
+        {
+            Profesor rta = new Profesor();
+            foreach (Profesor item in u.profesores)
+            {
+                if (item == clase)
+                {
+                    
+                    rta = item; // corregir  cuando lance exepcion 
+                    break;
+                }
+            }
+            return rta;
+        }
+
+        public static bool operator != (Universidad g, Alumno a)
+        {
+            return (g == a);
+        }
+
+        public static bool operator != (Universidad g, Profesor p)
+        {
+            return !(g == p);
+        }
+        /// <summary>
+        /// El distinto retornará el primer Profesor que no pueda dar la clase.
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="clase"></param>
+        /// <returns></returns>
+        public static Profesor operator != (Universidad u, EClases clase)
+        {
+            Profesor rta = new Profesor();
+            foreach (Profesor item in u.profesores)
+            {
+                if (item != clase)
+                {
+                    rta = item;
+                    break;
+                }
+                
+            }
+            return rta;
+        }
         #endregion
 
-        #region ENUMERADOS
+            #region ENUMERADOS
 
         public enum EClases
         {

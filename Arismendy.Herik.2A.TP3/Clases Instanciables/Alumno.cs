@@ -21,7 +21,7 @@ namespace Clases_Instanciables
         /// <summary>
         /// Constructor por defecto.
         /// </summary>
-        public Alumno()
+        public Alumno():this (default,default,default,default,default,default,default)
         { }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Clases_Instanciables
         /// <param name="a1"></param>
         /// <param name="clase"></param>
         /// <returns></returns>
-        public static bool operator !=(Alumno a1, Universidad.EClases clase)
+        public static bool operator != (Alumno a1, Universidad.EClases clase)
         {
 
             return a1.claseQueToma != clase;

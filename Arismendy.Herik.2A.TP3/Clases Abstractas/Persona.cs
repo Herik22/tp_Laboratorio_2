@@ -5,20 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Clases_Abstractas
-{               /*#region Atributos
-        #endregion
-
-        #region CONSTRUCTORES
-        #endregion
-
-        #region PROPIEDADES
-        #endregion
-
-        #region METODOS 
-        #endregion
-
-        #region SOBRECARGAS 
-        #endregion*/
+{               /*Clase Persona:
+                        • Abstracta, con los atributos Nombre, Apellido, Nacionalidad y DNI.
+                        • Se deberá validar que el DNI sea correcto, teniendo en cuenta su nacionalidad. Argentino entre 1 y
+                        89999999 y Extranjero entre 90000000 y 99999999. Caso contrario, se lanzará la excepción
+                        NacionalidadInvalidaException.
+                        • Si el DNI presenta un error de formato (más caracteres de los permitidos, letras, etc.) se lanzará
+                        DniInvalidoException.
+                        • Sólo se realizarán las validaciones dentro de las propiedades.
+                        • Validará que los nombres sean cadenas con caracteres válidos para nombres. Caso contrario, no se
+                        cargará.
+                        • ToString retornará los datos de la Persona.*/
     public class Persona
     {
         #region Atributos
@@ -119,7 +116,59 @@ namespace Clases_Abstractas
             return sb.ToString();
         }
 
-        ///DESARROLLAR LAS VALIDACIONES
+        /// <summary>
+        ///  Se deberá validar que el DNI sea correcto, teniendo en cuenta su nacionalidad. Argentino entre 1 y
+        /// 89999999 y Extranjero entre 90000000 y 99999999. Caso contrario, se lanzará la excepción
+        /// NacionalidadInvalidaException.
+        /// </summary>
+        /// <param name="nacionalidad"></param>
+        /// <param name="dato"></param>
+        /// <returns></returns>
+        private int ValidarDni(ENacionalidad nacionalidad, int dato)
+        {
+
+            if (nacionalidad == ENacionalidad.Argentino && dato >= 1 && dato <= 89999999 || 
+                nacionalidad == ENacionalidad.Extranjero && dato >= 90000000 && dato <= 99999999)// 1-89999999  LANZAR EXECPCIONES.
+            {                   
+                return dato;
+            } else  
+            {
+                throw new Exception();
+            }// lanzar excepcion
+
+           
+        }
+
+        /// <summary>
+        /// • Si el DNI presenta un error de formato (más caracteres de los permitidos, letras, etc.) se lanzaráDniInvalidoException.
+        /// </summary>
+        /// <param name="nacionalidad"></param>
+        /// <param name="dato"></param>
+        /// <returns></returns>
+        private int ValidarDni (ENacionalidad nacionalidad,string dato)
+        {
+            int auxDni = -1;
+            if ( dato.Length < 1 && dato.Length > 8 || !(int.TryParse(dato,out auxDni)))
+            {
+                //lanzo exption
+            }
+            return this.ValidarDni(nacionalidad, auxDni);          
+        }
+
+        /// <summary>
+        ///  Validará que los nombres sean cadenas con caracteres válidos para nombres. Caso contrario, no se cargará.
+        /// </summary>
+        /// <param name="dato"></param>
+        /// <returns></returns>
+        private string ValidarNombreApellido(string dato)
+        {
+            if (dato.Length > 1 && dato.Any(char.IsSymbol) || dato.Any(char.IsDigit))
+            {
+                return "";
+            }
+            return dato;
+        }
+           
         #endregion  
 
         #region ENUMERADOS

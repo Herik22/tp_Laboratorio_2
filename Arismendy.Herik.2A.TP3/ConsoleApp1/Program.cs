@@ -12,6 +12,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            /*
             Profesor prueba = new Profesor(1, "rick", "sanchez", "95889316", Persona.ENacionalidad.Extranjero);
             
 
@@ -27,8 +28,11 @@ namespace ConsoleApp1
             j1 += a3;
             j1 += a4;
 
-            Console.WriteLine(j1.ToString());
-            Console.ReadLine();
+            Console.WriteLine(j1.ToString());*/
+
+            /*Persona p1 = new Persona();
+            p1.ValidarDni(Persona.ENacionalidad.Extranjero, 95889316);
+            Console.ReadLine();*/
         }
     }
 }
