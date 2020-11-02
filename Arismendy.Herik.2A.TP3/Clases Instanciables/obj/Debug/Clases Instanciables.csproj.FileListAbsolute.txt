@@ -16,3 +16,7 @@ C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\
 C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\obj\Debug\Clases Instanciables.csproj.CopyComplete
 C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\obj\Debug\Clases Instanciables.dll
 C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\obj\Debug\Clases Instanciables.pdb
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\bin\Debug\Excepciones.dll
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\bin\Debug\Excepciones.pdb
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\bin\Debug\Archivos.dll
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Instanciables\bin\Debug\Archivos.pdb

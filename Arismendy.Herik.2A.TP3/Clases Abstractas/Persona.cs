@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Excepciones;
 
-namespace Clases_Abstractas
+namespace EntidadesAbstractas
 {               /*Clase Persona:
                         • Abstracta, con los atributos Nombre, Apellido, Nacionalidad y DNI.
                         • Se deberá validar que el DNI sea correcto, teniendo en cuenta su nacionalidad. Argentino entre 1 y
@@ -16,7 +18,7 @@ namespace Clases_Abstractas
                         • Validará que los nombres sean cadenas con caracteres válidos para nombres. Caso contrario, no se
                         cargará.
                         • ToString retornará los datos de la Persona.*/
-    public class Persona
+    public abstract class Persona
     {
         #region Atributos
 
@@ -65,23 +67,44 @@ namespace Clases_Abstractas
         /// <param name="apellido"></param>
         /// <param name="dni"></param>
         /// <param name="nacionalidad"></param>
-        public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad) : this(nombre, apellido, int.Parse(dni), nacionalidad)
+        public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad) : this(nombre, apellido, nacionalidad)
         {
-
+            this.StringToDNI = dni;
         }
 
         #endregion
 
-        #region PROPIEDADES // VALIDAR EL STRINGTODNI
+        #region PROPIEDADES 
         /// <summary>
-        /// propiedad de lectura / escritura para el apellido
+        /// propiedad de lectura / escritura para el apellido con previa validacion.
         /// </summary>
-        public string Apellido { get { return this.apellido; } set { apellido = value; } }
+        public string Apellido 
+        { 
+            get 
+            { 
+                return this.apellido; 
+            } 
+            set 
+            { 
+                apellido = this.ValidarNombreApellido(value); 
+            }
+        
+        }
 
         /// <summary>
-        /// propiedad de lectura / escritura para el DNI
+        /// propiedad de lectura / escritura para el DNI validando previamente. 
         /// </summary>
-        public int Dni { get { return this.dni; } set { dni = value; } }
+        public int Dni 
+        { 
+            get
+            {
+              return this.dni; 
+            }
+            set 
+            {                   
+                dni = this.ValidarDni(this.nacionalidad, value);                
+            } 
+        }
 
         /// <summary>
         /// propiedad de lectura / escritura para la Nacionalidad
@@ -91,16 +114,32 @@ namespace Clases_Abstractas
         /// <summary>
         /// propiedad de lectura / escritura para el Nombre
         /// </summary>
-        public string Nombre { get { return this.nombre; } set { nombre = value; } }
+        public string Nombre
+        { 
+            get 
+            { 
+                return this.nombre; 
+            } 
+            set
+            { 
+                nombre = this.ValidarNombreApellido(value);
+            } 
+        }
 
         /// <summary>
-        /// propiedad de  escritura para el DNI
+        /// propiedad de  escritura para el DNI con previ validacion.
         /// </summary>
-        public string StringToDNI { set { dni = int.Parse(value); } }
+        public string StringToDNI
+        { 
+            set
+            { 
+                dni = this.ValidarDni(this.nacionalidad,value);
+            } 
+        }
 
         #endregion
 
-        #region METODOS // APLICAR VALIDACIONES!!!!!!!!!!!!!!
+        #region METODOS 
 
         /// <summary>
         /// Retorna la informacion de persona. 
@@ -110,37 +149,35 @@ namespace Clases_Abstractas
         {
             StringBuilder sb = new StringBuilder();
             //sb.AppendLine();
-            sb.AppendFormat("NOMBRE COMPLETO: {0},{1}", this.nombre, this.apellido);
+            sb.AppendFormat("NOMBRE COMPLETO: {0},{1}", this.apellido , this.nombre);
             sb.AppendLine();
             sb.AppendFormat("NACIONALIDAD: {0}", this.nacionalidad);
             return sb.ToString();
         }
 
         /// <summary>
-        ///  Se deberá validar que el DNI sea correcto, teniendo en cuenta su nacionalidad. Argentino entre 1 y
-        /// 89999999 y Extranjero entre 90000000 y 99999999. Caso contrario, se lanzará la excepción
-        /// NacionalidadInvalidaException.
+        ///  Se valida que el DNI sea correcto, teniendo en cuenta su nacionalidad. si es Argentino menor a 1 o 
+        ///  mayor a 89999999 o si es  Extranjero menor a 90000000 o mayor a  99999999.  se lanzará la excepción
+        ///  " NacionalidadInvalidaException. "
         /// </summary>
         /// <param name="nacionalidad"></param>
         /// <param name="dato"></param>
         /// <returns></returns>
         private int ValidarDni(ENacionalidad nacionalidad, int dato)
-        {
-
-            if (nacionalidad == ENacionalidad.Argentino && dato >= 1 && dato <= 89999999 || 
-                nacionalidad == ENacionalidad.Extranjero && dato >= 90000000 && dato <= 99999999)// 1-89999999  LANZAR EXECPCIONES.
-            {                   
-                return dato;
-            } else  
+        {          
+            if (nacionalidad == ENacionalidad.Argentino && dato >= 1 && dato <= 89999999 ||
+                nacionalidad == ENacionalidad.Extranjero && dato >= 90000000 && dato <= 99999999)
             {
-                throw new Exception();
-            }// lanzar excepcion
-
-           
+                return dato;
+            }else
+            {
+                throw new NacionalidadInvalidaException();
+            }
+            
         }
 
         /// <summary>
-        /// • Si el DNI presenta un error de formato (más caracteres de los permitidos, letras, etc.) se lanzaráDniInvalidoException.
+        /// • valida que el DNI no presenta un error de formato (más caracteres de los permitidos, letras, etc.).
         /// </summary>
         /// <param name="nacionalidad"></param>
         /// <param name="dato"></param>
@@ -148,11 +185,14 @@ namespace Clases_Abstractas
         private int ValidarDni (ENacionalidad nacionalidad,string dato)
         {
             int auxDni = -1;
-            if ( dato.Length < 1 && dato.Length > 8 || !(int.TryParse(dato,out auxDni)))
+
+            if (dato.Length < 1 && dato.Length > 8 || !int.TryParse(dato, out auxDni))
             {
-                //lanzo exption
+                 throw new DniInvalidoException();
             }
-            return this.ValidarDni(nacionalidad, auxDni);          
+            return this.ValidarDni(nacionalidad, auxDni);
+            
+                   
         }
 
         /// <summary>
@@ -170,7 +210,7 @@ namespace Clases_Abstractas
         }
            
         #endregion  
-
+     
         #region ENUMERADOS
 
         public enum ENacionalidad
@@ -180,5 +220,5 @@ namespace Clases_Abstractas
         }
         #endregion
 
-    }
+   }
 }

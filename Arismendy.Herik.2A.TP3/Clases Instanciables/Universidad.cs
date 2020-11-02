@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Archivos;
+using Excepciones;
 
 namespace Clases_Instanciables
 {               /*       Clase Universidad:
@@ -38,7 +40,7 @@ namespace Clases_Instanciables
 
         #region CONSTRUCTORES
         /// <summary>
-        /// 
+        /// Constructor por defecto que iniciliaza todas las listas. 
         /// </summary>
         public Universidad ()
         {
@@ -49,33 +51,104 @@ namespace Clases_Instanciables
 
         #endregion
 
-        #region PROPIEDADES COMPLETAR PROPIEDADES!!!!!!!!!!!!!!!!!!!!! INDEXEADORES
+        #region PROPIEDADES
 
         /// <summary>
-        /// 
+        /// Propiedad de lectura / escritura para la lista de alumnos. 
         /// </summary>
         public List<Alumno> Alumnos  { get {return this.alumnos; } set {this.alumnos = value; } }
         /// <summary>
-        /// 
+        /// Propiedad de lectura / escritura para la lista de profesores. 
         /// </summary>
         public List<Profesor> Instructores { get { return this.profesores; } set { this.profesores = value; } }
 
         /// <summary>
-        /// 
+        /// Propiedad de lectura / escritura para la lista de jornadas. 
         /// </summary>
         public List<Jornada> Jornadas { get { return this.jornada; } set { this.jornada = value; } }
 
         /// <summary>
-        /// 
+        ///  Indexeador que permite acceder a una Jornada en especifico.. 
         /// </summary>
-        public List<Alumno> This { get { return this.alumnos; } set { this.alumnos = value; } }
+        /// <param name="i"></param>
+        /// <returns></returns>
+        public Jornada this [int i]
+        {
+            get
+            {
+                if ( i< 0 || i >= this.jornada.Count)
+                {
+                    return null;
+                }
+                else
+                {
+                    return this.jornada[i];
+                }
+            }
+            set
+            {
+                if(i >= 0 && i < this.jornada.Count)
+                {
+                    this.jornada[i] = value;
+                }else if ( i == this.jornada.Count)
+                {
+                    this.jornada.Add(value);
+                }               
+            }
+        }
 
 
 
         #endregion
 
-        #region METODOS // ARCHIVOS!!!!!!!! 
+        #region METODOS 
+        /// <summary>
+        /// Hace publicos los  datos de la Universidad.
+        /// </summary>
+        private string MostrarDatos (Universidad uni)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine();
+            foreach (Jornada item in uni.jornada)
+            {
+                sb.Append(item.ToString());
+                sb.AppendLine("<-------------------------------------------------->");
+            }
+            
+            return sb.ToString();
 
+        }
+
+        /// <summary>
+        /// Hace publicos los datos de la universidad. 
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return this.MostrarDatos(this);
+        }
+        /// <summary>
+        /// permite serializar los dato de una universidad y guardarlos en en un archivo xml.
+        /// </summary>
+        /// <param name="uni"></param>
+        /// <returns></returns>
+        public static bool Guardar(Universidad uni)
+        {
+            Xml<Universidad> xU = new Xml<Universidad>();
+            return xU.Guardar("Universidad.xml", uni);
+        }
+
+        /// <summary>
+        /// Deserializa un archivo xml y lo retorna como una universidad.
+        /// </summary>
+        /// <returns></returns>
+        public static Universidad Leer ()
+        {
+            Xml<Universidad> xU = new Xml<Universidad>();
+            xU.Leer("Universidad.xml", out Universidad UniversidadReturn);
+            return UniversidadReturn;
+
+        }
         #endregion
 
         #region SOBRECARGAS PREGUNTAR POR LAS DE UNIVERSIDAD - CLASE
@@ -95,6 +168,7 @@ namespace Clases_Instanciables
                     auxJornada += item;
                 }
             }
+            g.jornada.Add(auxJornada);
             return g;
         }
 
@@ -104,11 +178,16 @@ namespace Clases_Instanciables
         /// <param name="u"></param>
         /// <param name="a"></param>
         /// <returns></returns>
-        public static Universidad operator + (Universidad u,Alumno a) //falta excepcion 
+        public static Universidad operator + (Universidad u,Alumno a) 
         {
-            if ( u != a)
+
+            if (u != a)
             {
                 u.alumnos.Add(a);
+            }
+            else
+            {
+                throw new AlumnoRepetidoException();
             }
             return u;
         }
@@ -124,7 +203,7 @@ namespace Clases_Instanciables
             if (u != i)
             {
                 u.profesores.Add(i); 
-            }//falta exepcion 
+            } 
             return u;
         }
 
@@ -161,30 +240,32 @@ namespace Clases_Instanciables
         }
 
         /// <summary>
-        /// La igualación entre un Universidad y una Clase retornará el primer Profesor capaz de dar esa clase.
+        /// La igualación entre una Universidad y una Clase retornará el primer Profesor capaz de dar esa clase.
         /// Sino, lanzará la Excepción SinProfesorException.
         /// </summary>
         /// <param name="u"></param>
         /// <param name="clase"></param>
         /// <returns></returns>
-        public static Profesor operator == (Universidad u, EClases clase) //FALTA EL BLOQUE TRY catch
+        public static Profesor operator == (Universidad u, EClases clase) //CONFIRMAR 
         {
-            Profesor rta = new Profesor();
-            foreach (Profesor item in u.profesores)
-            {
-                if (item == clase)
+            Profesor rta = null; //new Profesor();
+                foreach (Profesor item in u.profesores)
                 {
-                    
-                    rta = item; // corregir  cuando lance exepcion 
-                    break;
+                    if (item == clase)
+                    {
+                        rta = item;
+                        break;
+                    }else
+                    {
+                        throw new SinProfesorException();
+                    }
                 }
-            }
             return rta;
         }
 
         public static bool operator != (Universidad g, Alumno a)
         {
-            return (g == a);
+            return !(g == a);
         }
 
         public static bool operator != (Universidad g, Profesor p)
@@ -213,7 +294,7 @@ namespace Clases_Instanciables
         }
         #endregion
 
-            #region ENUMERADOS
+        #region ENUMERADOS
 
         public enum EClases
         {

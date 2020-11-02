@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Excepciones
+{
+    public class ArchivosException : Exception
+    {
+        public ArchivosException () : base ("Excepcion de Archivos.!!")
+        { }
+
+        public ArchivosException (string msj) : base (msj)
+        { }
+
+        public ArchivosException ( Exception innerException)
+        { }
+
+    }
+}

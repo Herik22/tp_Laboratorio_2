@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Archivos;
 
 namespace Clases_Instanciables
 {       /*Clase Jornada:
@@ -70,6 +71,31 @@ namespace Clases_Instanciables
         #region METODOS  // ARCHIVOS !!!!!!!!!!!!!11
 
         /// <summary>
+        /// Permite guardar la jornada en un archivo de texto. 
+        /// </summary>
+        /// <param name="jornada"></param>
+        /// <returns></returns>
+        public static bool Guardar (Jornada jornada)
+        {
+            Texto t = new Texto();
+
+            return t.Guardar("Jornada.txt", jornada.ToString()); 
+        }
+
+        /// <summary>
+        /// Permite leer los datos de un archivo en modo texto, establecerlos en ua variable y retornarla. 
+        /// </summary>
+        /// <returns></returns>
+        public static string Leer ()
+        {
+            Texto t = new Texto();
+
+            Jornada auxJ = new Jornada();
+            t.Leer("Jornada.txt",out string datos);
+
+            return datos;
+        }
+        /// <summary>
         /// Hace publicos los datos de la jornada. 
         /// </summary>
         /// <returns></returns>
@@ -90,7 +116,7 @@ namespace Clases_Instanciables
         #region SOBRECARGAS 
 
         /// <summary>
-        /// TRUE=   si el alumno participa participa de la clase.
+        /// TRUE=   si el alumno participa  de la clase.
         /// </summary>
         /// <param name="j"></param>
         /// <param name="a"></param>
@@ -100,7 +126,7 @@ namespace Clases_Instanciables
             bool rta = false;
             foreach (Alumno item in j.alumnos)
             {
-                rta = item.Equals(a);
+                rta = item.Equals(a);               
             }
                 return rta;
         }

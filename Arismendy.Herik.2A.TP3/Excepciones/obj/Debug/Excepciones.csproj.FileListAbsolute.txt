@@ -1,0 +1,6 @@
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Excepciones\bin\Debug\Excepciones.dll
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Excepciones\bin\Debug\Excepciones.pdb
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Excepciones\obj\Debug\Excepciones.csprojAssemblyReference.cache
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Excepciones\obj\Debug\Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Excepciones\obj\Debug\Excepciones.dll
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Excepciones\obj\Debug\Excepciones.pdb

@@ -46,7 +46,10 @@
     <Compile Include="Universitario.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <ProjectReference Include="..\Excepciones\Excepciones.csproj">
+      <Project>{67470d90-c310-44a3-847b-25432f0f3770}</Project>
+      <Name>Excepciones</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

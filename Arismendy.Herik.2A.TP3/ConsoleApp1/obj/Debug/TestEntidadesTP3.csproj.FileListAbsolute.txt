@@ -22,3 +22,7 @@ C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\
 C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\ConsoleApp1\obj\Debug\TestEntidadesTP3.csproj.CopyComplete
 C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\ConsoleApp1\bin\Debug\Excepciones.dll
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\ConsoleApp1\bin\Debug\Excepciones.pdb
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\ConsoleApp1\bin\Debug\Archivos.dll
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\ConsoleApp1\bin\Debug\Archivos.pdb

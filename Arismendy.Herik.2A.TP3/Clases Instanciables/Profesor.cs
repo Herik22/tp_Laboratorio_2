@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using Clases_Abstractas;
+using EntidadesAbstractas;
 
 namespace Clases_Instanciables
 { /*
@@ -27,14 +27,7 @@ namespace Clases_Instanciables
         #endregion
 
         #region CONSTRUCTORES 
-        /// <summary>
-        /// Constructor estatico que iniciliza el random.
-        /// </summary>
-        static Profesor() 
-        {
-            Profesor.random = new Random();
-            
-        }
+        
         /// <summary>
         /// constructor por defecto.
         /// </summary>
@@ -43,6 +36,16 @@ namespace Clases_Instanciables
             
             
         }
+
+        /// <summary>
+        /// Constructor estatico que iniciliza el random.
+        /// </summary>
+        static Profesor()
+        {
+            Profesor.random = new Random();
+
+        }
+
         /// <summary>
         /// Constructor parametrizado que a su vez llama al constructor base. 
         /// </summary>
@@ -57,9 +60,6 @@ namespace Clases_Instanciables
             this.clasesDelDia = new Queue<Universidad.EClases>();
             _randomClases();
         }
-        #endregion
-
-        #region PROPIEDADES
         #endregion
 
         #region METODOS 
@@ -97,8 +97,7 @@ namespace Clases_Instanciables
         /// <returns></returns>
         protected override string ParticiparEnClase()
         {
-            StringBuilder sb = new StringBuilder();
-            //sb.AppendLine();
+            StringBuilder sb = new StringBuilder();            
             sb.AppendLine("CLASES DEL DIA:");
 
             foreach (Universidad.EClases item in this.clasesDelDia)
@@ -133,7 +132,11 @@ namespace Clases_Instanciables
             bool rta = false;
             foreach (Universidad.EClases item in i.clasesDelDia)
             {
-                rta = item == clase;
+                if(item == clase)
+                {
+                    rta = true;
+                    break;
+                }
             }
             return rta;
         }

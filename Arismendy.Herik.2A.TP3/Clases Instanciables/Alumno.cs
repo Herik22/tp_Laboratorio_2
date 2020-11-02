@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Clases_Abstractas;
+using EntidadesAbstractas;
 
 namespace Clases_Instanciables
 {
@@ -58,9 +58,6 @@ namespace Clases_Instanciables
 
         #endregion
 
-        #region PROPIEDADES
-        #endregion
-
         #region METODOS 
 
         /// <summary>
@@ -74,7 +71,8 @@ namespace Clases_Instanciables
             sb.AppendLine(base.MostrarDatos());
             sb.AppendFormat("ESTADO DE CUENTA: {0}", this.estadoCuenta);
             sb.AppendLine();
-            sb.AppendFormat("TOMA CLASES DE : {0}", this.claseQueToma);
+            sb.AppendLine(this.ParticiparEnClase());
+            //sb.AppendFormat("TOMA CLASES DE : {0}", this.claseQueToma); 
             sb.AppendLine();
 
 
@@ -110,13 +108,13 @@ namespace Clases_Instanciables
         /// <param name="a1"></param>
         /// <param name="clase"></param>
         /// <returns></returns>
-        public static bool operator ==(Alumno a1, Universidad.EClases clase) //PREGUNTAR QUE ONDA POR EL EQUALS 
+        public static bool operator ==(Alumno a1, Universidad.EClases clase)  
         {
 
             return a1.claseQueToma == clase && a1.estadoCuenta != EEstadoCuenta.Deudor;
         }
         /// <summary>
-        /// Sera distinto si no toma esa clase. 
+        /// Sera distinto solo  si no toma esa clase. 
         /// </summary>
         /// <param name="a1"></param>
         /// <param name="clase"></param>

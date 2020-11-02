@@ -1,0 +1,20 @@
+JORNADA:
+CLASE DE: Laboratorio POR: NOMBRE COMPLETO: Juan,Lopez
+NACIONALIDAD: Argentino
+
+LEGAJO: 1
+CLASES DEL DIA:
+Legislacion
+Laboratorio
+
+ALUMNOS:
+NOMBRE COMPLETO: Joaquin,Suarez
+NACIONALIDAD: Extranjero
+
+LEGAJO: 7
+
+ESTADO DE CUENTA: AlDia
+TOMA CLASE DE:Laboratorio
+
+
+

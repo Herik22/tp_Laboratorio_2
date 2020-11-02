@@ -10,3 +10,6 @@ C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\
 C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.csproj.CoreCompileInputs.cache
 C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.dll
 C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.pdb
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Abstractas\bin\Debug\Excepciones.dll
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Abstractas\bin\Debug\Excepciones.pdb
+C:\Users\H420\Desktop\GITHUB DE LOS TPS\tp_Laboratorio_2\Arismendy.Herik.2A.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.csproj.CopyComplete

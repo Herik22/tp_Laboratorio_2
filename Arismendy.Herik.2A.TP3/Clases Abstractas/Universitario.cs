@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clases_Abstractas
+namespace EntidadesAbstractas
 {
     public abstract class Universitario : Persona
     {
@@ -19,7 +19,7 @@ namespace Clases_Abstractas
         /// <summary>
         /// COnstructor por defecto de tipo Persona
         /// </summary>
-        public Universitario()
+        public Universitario() : this (default,default,default,default,default)
         { }
 
         /// <summary>
@@ -39,9 +39,6 @@ namespace Clases_Abstractas
 
         #endregion
 
-        #region PROPIEDADES
-        #endregion
-
         #region METODOS 
 
         /// <summary>
@@ -53,7 +50,7 @@ namespace Clases_Abstractas
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.ToString());
             sb.AppendLine();
-            sb.AppendFormat("LEGAJO: {0}", this.legajo);
+            sb.AppendFormat("LEGAJO NUMERO: {0}", this.legajo);
             sb.AppendLine();
 
             return sb.ToString();
@@ -82,21 +79,15 @@ namespace Clases_Abstractas
 
         #region SOBRECARGAS 
         /// <summary>
-        /// TRUE: si tipo y legajo o dni son iguales.
+        /// TRUE: si son del mismo tipo y  legajo o dni son iguales.
         /// FALSE: lo contrario. 
         /// </summary>
         /// <param name="u1"></param>
         /// <param name="u2"></param>
         /// <returns></returns>
         public static bool operator ==(Universitario u1, Universitario u2)
-        {
-            bool rta = false;
-
-            if (u1.GetType() == u2.GetType() && (u1.legajo == u2.legajo || u1.Dni == u2.Dni))
-            {
-
-            }
-            return rta;
+        {         
+            return (u1.GetType() == u2.GetType() && (u1.legajo == u2.legajo || u1.Dni == u2.Dni) );
         }
 
         public static bool operator !=(Universitario u1, Universitario u2)
