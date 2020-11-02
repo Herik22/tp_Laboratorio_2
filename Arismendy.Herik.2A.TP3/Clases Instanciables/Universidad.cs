@@ -103,7 +103,7 @@ namespace Clases_Instanciables
 
         #region METODOS 
         /// <summary>
-        /// Hace publicos los  datos de la Universidad.
+        /// Retorna los datos de la universidad.
         /// </summary>
         private string MostrarDatos (Universidad uni)
         {
@@ -151,14 +151,13 @@ namespace Clases_Instanciables
         }
         #endregion
 
-        #region SOBRECARGAS PREGUNTAR POR LAS DE UNIVERSIDAD - CLASE
+        #region SOBRECARGAS 
         /// <summary>
-        ///  Al agregar una clase a un Universidad se deberá generar y agregar una nueva Jornada indicando la
-        ///clase, un Profesor que pueda darla(según su atributo ClasesDelDia) y la lista de alumnos que la
-        ///toman(todos los que coincidan en su campo ClaseQueToma).
+        ///  generar y agregar una nueva Jornada indicando la clase, un Profesor que pueda darla 
+        ///  y la lista de alumnos que la toman.
         /// </summary>
         /// <returns></returns>
-        public static  Universidad operator + (Universidad g, EClases clase) // revisar
+        public static  Universidad operator + (Universidad g, EClases clase) 
         {
             Jornada auxJornada = new Jornada(clase, g == clase );
             foreach (Alumno item in g.alumnos)

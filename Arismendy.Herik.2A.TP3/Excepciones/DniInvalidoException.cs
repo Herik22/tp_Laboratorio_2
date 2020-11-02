@@ -12,15 +12,31 @@ namespace Excepciones
     public class DniInvalidoException : Exception
     {
 
+        /// <summary>
+        /// Constructor y mensaje por defecto 
+        /// </summary>
         public DniInvalidoException () : base ("El FORMATO DEL DNI ES INVALIDO")
         { }
 
+        /// <summary>
+        /// constructor que recibe una excepcion.
+        /// </summary>
+        /// <param name="msj"></param>
         public DniInvalidoException ( Exception e)
         { }
 
+        /// <summary>
+        /// constructor que recibe un  mensaje como parametro.
+        /// </summary>
+        /// <param name="msj"></param>
         public DniInvalidoException (string msj) : base (msj)
         { }
 
+        /// <summary>
+        /// Consturctor con mensaje y excepcion como parametros(mas informacion de la excepcion)
+        /// </summary>
+        /// <param name="msj"></param>
+        /// <param name="e"></param>
         public DniInvalidoException (string msj , Exception e): base (msj,e)
         { }
     }

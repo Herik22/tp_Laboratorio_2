@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEntidadesTP3", "ConsoleApp1\TestEntidadesTP3.csproj", "{90EF0543-C853-4235-A534-529323D93724}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTp3", "ConsoleApp1\TestTp3.csproj", "{90EF0543-C853-4235-A534-529323D93724}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clases Abstractas", "Clases Abstractas\Clases Abstractas.csproj", "{871BA2CC-B57C-4CF4-8817-1ABA54D0839E}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excepciones", "Excepciones\Excepciones.csproj", "{67470D90-C310-44A3-847B-25432F0F3770}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archivos", "Archivos\Archivos.csproj", "{5BAABD9B-40AD-41AD-9CF9-10DE185DE886}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnitariosTp3", "TestUnitariosTp3\TestUnitariosTp3.csproj", "{10E6C7B7-1A7F-4566-8E11-F187CE294B6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{5BAABD9B-40AD-41AD-9CF9-10DE185DE886}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BAABD9B-40AD-41AD-9CF9-10DE185DE886}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BAABD9B-40AD-41AD-9CF9-10DE185DE886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10E6C7B7-1A7F-4566-8E11-F187CE294B6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10E6C7B7-1A7F-4566-8E11-F187CE294B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10E6C7B7-1A7F-4566-8E11-F187CE294B6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10E6C7B7-1A7F-4566-8E11-F187CE294B6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

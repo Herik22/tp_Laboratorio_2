@@ -7,7 +7,7 @@ using EntidadesAbstractas;
 using Clases_Instanciables;
 using Excepciones;
 
-namespace ConsoleApp1
+namespace TestTp3
 {
     class Program
     {

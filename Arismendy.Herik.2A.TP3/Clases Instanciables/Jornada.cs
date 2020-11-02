@@ -68,7 +68,7 @@ namespace Clases_Instanciables
 
         #endregion
 
-        #region METODOS  // ARCHIVOS !!!!!!!!!!!!!11
+        #region METODOS  
 
         /// <summary>
         /// Permite guardar la jornada en un archivo de texto. 
