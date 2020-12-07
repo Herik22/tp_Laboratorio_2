@@ -18,3 +18,13 @@ C:\Users\Oscar Outsider\Desktop\TP4\Arismendy.Herik.tp4\Test\obj\Debug\Test.cspr
 C:\Users\Oscar Outsider\Desktop\TP4\Arismendy.Herik.tp4\Test\obj\Debug\Test.csproj.CopyComplete
 C:\Users\Oscar Outsider\Desktop\TP4\Arismendy.Herik.tp4\Test\obj\Debug\Test.exe
 C:\Users\Oscar Outsider\Desktop\TP4\Arismendy.Herik.tp4\Test\obj\Debug\Test.pdb
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Test\bin\Debug\Test.exe.config
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Test\bin\Debug\Test.exe
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Test\bin\Debug\Test.pdb
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Test\bin\Debug\Arismendy.Herik.tp4.dll
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Test\bin\Debug\Arismendy.Herik.tp4.pdb
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Test\obj\Debug\Test.exe
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Test\obj\Debug\Test.pdb

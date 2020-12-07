@@ -36,14 +36,14 @@ namespace FormPrincipal
             // 
             this.labelCarrito.BackColor = System.Drawing.SystemColors.ControlDark;
             this.labelCarrito.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelCarrito.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCarrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCarrito.ForeColor = System.Drawing.SystemColors.Desktop;
             this.labelCarrito.Location = new System.Drawing.Point(12, 20);
             this.labelCarrito.Name = "labelCarrito";
             this.labelCarrito.Size = new System.Drawing.Size(245, 333);
             this.labelCarrito.TabIndex = 0;
             this.labelCarrito.Text = "PRODUCTOS";
             this.labelCarrito.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-
             // 
             // CarritoForm
             // 
@@ -54,6 +54,7 @@ namespace FormPrincipal
             this.Controls.Add(this.labelCarrito);
             this.Name = "CarritoForm";
             this.Text = "CarritoForm";
+            this.Load += new System.EventHandler(this.CarritoForm_Load);
             this.ResumeLayout(false);
 
         }

@@ -5,12 +5,17 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace FormPrincipal
 {
+    /// <summary>
+    /// Formulario principal para el sistema de ventas. 
+    /// </summary>
     public partial class ZapatillasFom : Form
     {
         #region ATRIBUTOS 
+
         protected SqlDataAdapter dataAdapterSneakers;
         protected DataTable dataTableSneakers;
 
@@ -18,17 +23,23 @@ namespace FormPrincipal
         protected DataTable dataTableBotines;
 
         protected Carrito car;
-        protected object[] filas;
+        protected List<int> filas;
+        protected int indexBotinDelete;
         protected float precioAcumulado;
+      
         #endregion
 
         #region CONSTRUCTORES
+        /// <summary>
+        /// Constructor por defecto que inicializara atributos y listas.
+        /// da inicio tambien a la vonfiguracion del datatable y dataadapter.
+        /// </summary>
         public ZapatillasFom()
         {
 
             InitializeComponent();
             this.car = new Carrito();
-            this.filas = new object[5];
+            this.filas = new List<int>();
 
             if (!this.ConfigurarDataAdapter() || !this.ConfigurarDataAdapterBotines())
             {
@@ -37,7 +48,8 @@ namespace FormPrincipal
             }
 
             this.ConfigurarDataTable();
-            
+
+            car.MaximoCompra += this.CarritoEventoPrecio;
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
@@ -50,10 +62,14 @@ namespace FormPrincipal
        
         #endregion
 
-        #region CONFIGURACION DATAADAPTER
+        #region CONFIGURACION DATA ADAPTERS
         
 
         #region SNEAKERS
+        /// <summary>
+        /// Metodo que permitira establecer la conexion entre el dataTable y la base de datos remota para los sneakers. 
+        /// </summary>
+        /// <returns></returns>
         private bool ConfigurarDataAdapter()
         {
             bool rta = false;
@@ -95,7 +111,11 @@ namespace FormPrincipal
         }
         #endregion
 
-            #region BOTINES
+        #region BOTINES
+        /// <summary>
+        /// Metodo que permitira establecer la conexion entre el dataTable y la base de datos remota para los Botines. 
+        /// </summary>
+        /// <returns></returns>
         private bool ConfigurarDataAdapterBotines()
         {
             bool rta = false;
@@ -139,8 +159,11 @@ namespace FormPrincipal
 
         #endregion
 
-        #region CONFIGURACION DATATABLE
+        #region CONFIGURACION DATA TABLES
 
+        /// <summary>
+        /// Permite configurar el datatable que se mostrara en el form para los Sneakers y los Botines. 
+        /// </summary>
         private void ConfigurarDataTable()
         {
             #region SNEAKERS
@@ -183,7 +206,9 @@ namespace FormPrincipal
         #endregion
 
         #region CONFIGURACION GRILLA
-
+        /// <summary>
+        /// Metodo que configurara la grilla en la cual se visualizara las base de datos tanto para Sneakers como para Botines. 
+        /// </summary>
         private void ConfigurarGrilla()
         {
             // Coloco color de fondo para las filas
@@ -215,7 +240,8 @@ namespace FormPrincipal
 
             // No permito la multiselección
             this.GrillaSneakers.MultiSelect = true;
-            this.GrillaBotines.MultiSelect = false;
+            this.GrillaBotines.MultiSelect = false; 
+
             // Selecciono toda la fila a la vez
             this.GrillaSneakers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.GrillaBotines.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -229,7 +255,7 @@ namespace FormPrincipal
             this.GrillaSneakers.RowsDefaultCellStyle.SelectionForeColor = Color.Aqua;
 
             this.GrillaBotines.RowsDefaultCellStyle.SelectionBackColor = Color.DarkOliveGreen;
-            this.GrillaBotines.RowsDefaultCellStyle.SelectionForeColor = Color.DarkOliveGreen;
+            this.GrillaBotines.RowsDefaultCellStyle.SelectionForeColor = Color.Aqua;
 
             // No permito modificar desde la grilla
             this.GrillaSneakers.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -238,6 +264,8 @@ namespace FormPrincipal
             // Saco los encabezados de las filas
             this.GrillaSneakers.RowHeadersVisible = false;
             this.GrillaBotines.RowHeadersVisible = false;
+
+            
         }
         #endregion
 
@@ -250,13 +278,18 @@ namespace FormPrincipal
         private void CargarStockSneakers_Click(object sender, EventArgs e)
         {
             try
-            {
+            {        
                 this.dataAdapterSneakers.Fill(this.dataTableSneakers);
 
                 this.ConfigurarGrilla();
 
                 this.GrillaSneakers.DataSource = this.dataTableSneakers;
 
+                //limpia la seleccion por defecto.
+                this.GrillaSneakers.ClearSelection();
+
+                // establezco la fila seleccionada por defecto en null  
+                this.GrillaSneakers.CurrentCell = null;
             }
             catch (Exception ex)
             {
@@ -264,6 +297,7 @@ namespace FormPrincipal
                 MessageBox.Show(ex.Message);
             }
         }
+
         /// <summary>
         /// Evento que permite cargar el stock de BOTINES en la grilla, mediante un comando de seleccion en la base de datos. 
         /// </summary>
@@ -279,6 +313,9 @@ namespace FormPrincipal
 
                 this.GrillaBotines.DataSource = this.dataTableBotines;
 
+                this.GrillaBotines.ClearSelection();
+
+                this.GrillaBotines.CurrentCell = null;
             }
             catch (Exception ex)
             {
@@ -286,6 +323,7 @@ namespace FormPrincipal
                 MessageBox.Show(ex.Message);
             }
         }
+
         /// <summary>
         /// Evento encargado de almacenar el producto seleccionado de la grilla con toda su informacion. 
         /// </summary>
@@ -295,49 +333,98 @@ namespace FormPrincipal
         {
             try
             {
-                int indexSneaker = this.GrillaSneakers.SelectedRows[0].Index; // guardo el numero de la fila index 
+                if(this.GrillaSneakers.CurrentRow != null && this.GrillaBotines.CurrentRow != null)
+                {
+                    //deselecciono las filas de los botines.
+                    this.GrillaBotines.ClearSelection();
+                    this.GrillaBotines.CurrentCell = null;
 
+                    this.GrillaSneakers.ClearSelection();
+                    this.GrillaSneakers.CurrentCell = null;
 
-                DataRow filaSneaker = this.dataTableSneakers.Rows[indexSneaker]; //obtengo la fila 
+                    this.car.MaximoCompra.Invoke(car, EventArgs.Empty);
+                }
+                // pregunto si hay alguna fila seleccionada en la grilla sneakers 
+                if (this.GrillaSneakers.CurrentRow != null )
+                {
 
+                    this.GrillaBotines.ClearSelection();
+                    int indexSneaker = this.GrillaSneakers.SelectedRows[0].Index; // guardo el numero de la fila index 
 
-                //int indexLibre = Carrito.BuscarLibre(this.filas); // encuentro una posicionj para guardar el index 
+                    DataRow filaSneaker = this.dataTableSneakers.Rows[indexSneaker]; //obtengo la fila 
 
-                this.filas[this.BuscarLibre()] = indexSneaker;
+                    int id = int.Parse(filaSneaker["Id_Zapatilla"].ToString());
+                    string marca = filaSneaker["Marca"].ToString();
+                    float talla = float.Parse(filaSneaker["Talla"].ToString());
+                    float precio = float.Parse(filaSneaker["Precio"].ToString());
+                    string procedencia = filaSneaker["Procedencia"].ToString();
 
-                int id = int.Parse(filaSneaker["Id_Zapatilla"].ToString());
-                string marca = filaSneaker["Marca"].ToString();
-                float talla = float.Parse(filaSneaker["Talla"].ToString());
-                float precio = float.Parse(filaSneaker["Precio"].ToString());
-                string procedencia = filaSneaker["Procedencia"].ToString();
+                    this.precioAcumulado += precio;
 
-                this.precioAcumulado += precio;
+                    Sneakers sneaker = new Sneakers(marca, talla, precio, Sneakers.StringToProcedencia(procedencia));
 
-                Sneakers sneaker = new Sneakers(marca, talla, precio, Sneakers.StringaProcedencia(procedencia));
+                    car += sneaker;
 
-                car += sneaker;
-                this.FinalizarPagobutton.Enabled = true;
-                this.VerCarritobutton.Enabled = true;
+                    MessageBox.Show("Se  agrego correctamente !");
+
+                    this.FinalizarPagobutton.Enabled = true;
+                    this.VerCarritobutton.Enabled = true;
+
+                    this.filas.Add(indexSneaker);                   
+                }
+                // si hay algun producto de tipo botin seleccionado
+                else if (this.GrillaBotines.CurrentRow != null)
+                {
+                    this.GrillaSneakers.ClearSelection();
+
+                    int indexBotin = this.GrillaBotines.SelectedRows[0].Index;
+                    DataRow filaBotin = this.dataTableBotines.Rows[indexBotin];
+
+                    int id = int.Parse(filaBotin["ID_Botin"].ToString());
+                    string marca = filaBotin["Marca"].ToString();
+                    float talla = float.Parse(filaBotin["Talla"].ToString());
+                    float precio = float.Parse(filaBotin["Precio"].ToString());
+                    bool multiterreno = bool.Parse(filaBotin["Multiterreno"].ToString());
+
+                    this.precioAcumulado += precio;
+
+                    Botines botin = new Botines(marca, talla, precio, multiterreno);
+
+                    car += botin;
+
+                    MessageBox.Show("Se  agrego correctamente !");
+
+                    this.indexBotinDelete = indexBotin;
+                    this.FinalizarPagobutton.Enabled = true;
+                    this.VerCarritobutton.Enabled = true;
+
+                }
             }
             catch(SneakerRepetidoExcepcion sE)
             {
                 MessageBox.Show(sE.Message);
             }
-            
-            catch (Exception)
+            catch(MaximoBotinesExcepcion mBE)
             {
-
-                MessageBox.Show("NO HA SELECCIONADO NADA.");
+                MessageBox.Show(mBE.Message);
             }
-            
-           
         }
         /// <summary>
-        /// Evento que permite visualizar la informacion del carrito. 
+        /// Manejador para el evento de carrito Maximo.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void MostrarCarrito_Click(object sender, EventArgs e)
+        private void CarritoEventoPrecio(object sender, EventArgs e)
+        {
+            MessageBox.Show("SOLO PUEDES AGREGAR UN PRODUCTO AL CARRITO A LA VEZ.");
+        }
+
+            /// <summary>
+            /// Evento que permite visualizar la informacion del carrito. 
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
+            private void MostrarCarrito_Click(object sender, EventArgs e)
         {
             CarritoForm formularioCarrito = new CarritoForm(car);
             formularioCarrito.StartPosition = FormStartPosition.CenterScreen;
@@ -345,84 +432,78 @@ namespace FormPrincipal
         }
 
         /// <summary>
-        /// Evento que permite hace la baja en la base de datos, finalizando con ello la compra. 
+        /// Evento que permite hace la baja en la base de datos segun los productos elegidos, finalizando con ello la compra. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void FinalizarCompraButton(object sender, EventArgs e)
         {
-            Thread t = new Thread(this.GuardarBaseDatos);
-            // Falta verificar la  compra de  mas de un producto.
-
-            int idEliminar = -1;
-            int largo = this.filas.Length;
-            
-            Cliente clienteaux = new Cliente();
-
-            ClienteForm formularioCliente = new ClienteForm(clienteaux,this.precioAcumulado);
-
-            formularioCliente.StartPosition = FormStartPosition.CenterScreen;
-            formularioCliente.ShowDialog();
-
-            
-
-            for (int i = 0; i < largo; i++)
+            try
             {
-                if(this.filas!=null)
+                Thread t = new Thread(this.GuardarBaseDatos);
+
+                int idEliminar = -1;
+                int largo = this.filas.Count;
+
+                Cliente clienteaux = new Cliente();
+
+                ClienteForm formularioCliente = new ClienteForm(clienteaux, this.precioAcumulado);
+
+                formularioCliente.StartPosition = FormStartPosition.CenterScreen;
+                formularioCliente.ShowDialog();
+
+                if (this.car.ListaSneakers.Count != 0)
                 {
-                    foreach (int item in this.filas)
+                    for (int i = 0; i < largo; i++)
                     {
-
-                        idEliminar = item;
-                        break;
+                        if (this.filas != null)
+                        {
+                            foreach (int item in this.filas)
+                            {
+                                if (item != -1)
+                                {
+                                    idEliminar = item;
+                                    DataRow fila = this.dataTableSneakers.Rows[idEliminar];
+                                    fila.Delete();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    // Ubica la fila a eliminar y ejecuta comando 
-                    DataRow fila = this.dataTableSneakers.Rows[idEliminar];
-                    fila.Delete();
-                }else
-                {
-                    break;
                 }
-                
+                if (car.ListaBotines.Count != 0)
+                {
+                    DataRow fila = this.dataTableBotines.Rows[this.indexBotinDelete];
+                    fila.Delete();
+                }
+                t.Start();
             }
+            catch (Exception )
+            {
 
-            t.Start();
-
+                MessageBox.Show("ERROR AL GENERAL LA COMPRA");
+            }
         }
         #endregion
 
         #region METODOS AGREGADOS
         /// <summary>
-        /// Metodo que permite Buscar una posicion libre en el array donde se guardara el  index de las filas. 
+        /// Metodo que permite sincronizar la base de dato remota con lo ocurrido en el data table. 
         /// </summary>
-        /// <returns></returns>
-        public int BuscarLibre()
-        {
-
-            for (int i = 0; i < this.filas.Length; i++)
-            {
-                if (this.filas[i] == null)
-                {
-                    return i;
-                }
-            }
-            return -1;
-        }
         protected void GuardarBaseDatos()
         {
             try
             {
                 this.dataAdapterSneakers.Update(this.dataTableSneakers);
-
-                MessageBox.Show("Sincronizado!!!");
-                
+                MessageBox.Show("Sincronizado!!!");            
             }
             catch (Exception )
             {
-
                 MessageBox.Show("Error de Sincronizacion. ");
             }
-
         }
         #endregion
     }

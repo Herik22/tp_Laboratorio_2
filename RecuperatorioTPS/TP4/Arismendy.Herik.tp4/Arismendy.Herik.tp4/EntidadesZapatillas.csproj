@@ -41,16 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarCarritoExcepcion.cs" />
-    <Compile Include="Botines.cs" />
-    <Compile Include="Carrito.cs" />
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Enumerados.cs" />
-    <Compile Include="ExtensionCliente.cs" />
-    <Compile Include="IFactura.cs" />
-    <Compile Include="SneakerRepetidoExcepcion.cs" />
-    <Compile Include="Sneakers.cs" />
-    <Compile Include="Zapatillas.cs" />
+    <Compile Include="Entidades_Instanciables\Botines.cs" />
+    <Compile Include="Entidades_Instanciables\Carrito.cs" />
+    <Compile Include="Entidades_Instanciables\Cliente.cs" />
+    <Compile Include="Enumerados\Enumerados.cs" />
+    <Compile Include="Extensiones\ExtensionCliente.cs" />
+    <Compile Include="Interfaces\IFactura.cs" />
+    <Compile Include="Exepciones\SneakerRepetidoExcepcion.cs" />
+    <Compile Include="Entidades_Instanciables\Sneakers.cs" />
+    <Compile Include="Entidades_Abstractas\Zapatillas.cs" />
+    <Compile Include="Interfaces\ISerializar.cs" />
+    <Compile Include="Exepciones\MaximoBotinesExcepcion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

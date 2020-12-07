@@ -28,3 +28,18 @@ C:\Users\Oscar Outsider\Desktop\TP4\Arismendy.Herik.tp4\FormPrincipal\obj\Debug\
 C:\Users\Oscar Outsider\Desktop\TP4\Arismendy.Herik.tp4\FormPrincipal\obj\Debug\FormPrincipal.exe
 C:\Users\Oscar Outsider\Desktop\TP4\Arismendy.Herik.tp4\FormPrincipal\obj\Debug\FormPrincipal.pdb
 C:\Users\Oscar Outsider\Desktop\TP4\Arismendy.Herik.tp4\FormPrincipal\obj\Debug\FormPrincipal.ZapatillasFom.resources
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\bin\Debug\FormPrincipal.exe.config
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\bin\Debug\FormPrincipal.exe
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\bin\Debug\FormPrincipal.pdb
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\bin\Debug\Arismendy.Herik.tp4.dll
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\bin\Debug\Arismendy.Herik.tp4.pdb
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\obj\Debug\FormPrincipal.csprojAssemblyReference.cache
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\obj\Debug\FormPrincipal.CarritoForm.resources
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\obj\Debug\FormPrincipal.ClienteForm.resources
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\obj\Debug\FormPrincipal.ZapatillasFom.resources
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\obj\Debug\FormPrincipal.Properties.Resources.resources
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\obj\Debug\FormPrincipal.csproj.GenerateResource.cache
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\obj\Debug\FormPrincipal.csproj.CoreCompileInputs.cache
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\obj\Debug\FormPrincipal.csproj.CopyComplete
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\obj\Debug\FormPrincipal.exe
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\FormPrincipal\obj\Debug\FormPrincipal.pdb

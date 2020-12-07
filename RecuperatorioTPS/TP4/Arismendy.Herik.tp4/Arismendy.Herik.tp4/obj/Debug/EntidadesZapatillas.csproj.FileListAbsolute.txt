@@ -10,3 +10,9 @@ C:\Users\Oscar Outsider\Desktop\TP4\Arismendy.Herik.tp4\Arismendy.Herik.tp4\obj\
 C:\Users\Oscar Outsider\Desktop\TP4\Arismendy.Herik.tp4\Arismendy.Herik.tp4\obj\Debug\EntidadesZapatillas.csproj.CoreCompileInputs.cache
 C:\Users\Oscar Outsider\Desktop\TP4\Arismendy.Herik.tp4\Arismendy.Herik.tp4\obj\Debug\Arismendy.Herik.tp4.dll
 C:\Users\Oscar Outsider\Desktop\TP4\Arismendy.Herik.tp4\Arismendy.Herik.tp4\obj\Debug\Arismendy.Herik.tp4.pdb
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Arismendy.Herik.tp4\bin\Debug\Arismendy.Herik.tp4.dll
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Arismendy.Herik.tp4\bin\Debug\Arismendy.Herik.tp4.pdb
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Arismendy.Herik.tp4\obj\Debug\EntidadesZapatillas.csprojAssemblyReference.cache
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Arismendy.Herik.tp4\obj\Debug\EntidadesZapatillas.csproj.CoreCompileInputs.cache
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Arismendy.Herik.tp4\obj\Debug\Arismendy.Herik.tp4.dll
+C:\Users\MAIST\OneDrive\Desktop\tp_Laboratorio_2\RecuperatorioTPS\TP4\Arismendy.Herik.tp4\Arismendy.Herik.tp4\obj\Debug\Arismendy.Herik.tp4.pdb
