@@ -71,6 +71,8 @@ namespace Arismendy.Herik.tp4
             sb.AppendFormat("PROCEDENCIA: {0}", base.Talla);
             sb.AppendLine();
             sb.AppendFormat("PRECIO: {0}", base.Precio);
+            sb.AppendLine();
+            sb.AppendLine("-----------------------------------------");
 
             return sb.ToString();
         }

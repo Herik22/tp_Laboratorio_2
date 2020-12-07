@@ -68,8 +68,10 @@ namespace Arismendy.Herik.tp4
                 sb.AppendFormat("LOS BOTINES SON APTOS PARA TODO TERRENO!: {0}", this.esMultiterreno);
                 sb.AppendLine();
             }
-            
+
             sb.AppendFormat("PRECIO: {0}", base.Precio);
+            sb.AppendLine();
+            sb.AppendLine("-----------------------------------------");
 
             return sb.ToString();
         }

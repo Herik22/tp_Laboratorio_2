@@ -73,7 +73,7 @@ namespace Arismendy.Herik.tp4
             StringBuilder sb = new StringBuilder();
             sb.AppendLine();
                 
-                if (this.listaSneakers.Count >= 0 )
+                if (this.listaSneakers.Count > 0 )
                 {
                     sb.AppendLine(" TUS SNEAKERS ");
                     foreach (Sneakers item in this.listaSneakers)
